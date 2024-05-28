@@ -44,5 +44,25 @@ class ArticlesController extends Controller
     }
 
 
+    public function modifier_Articles_traitement(Request $request){
+        $request->validate([
+            'ImageArticle' =>'required',
+            'TitreArticle' =>'required',
+            'DescriptionArticle' =>'required',
+            'PublicationDate' =>'required|date',
+            'statut' =>'nullable',
+        ]);
+    
+        $article = Article ::find($request->id);
+        $article->ImageArticle = $request->ImageArticle;
+        $article->TitreArticle = $request->TitreArticle;
+        $article->DescriptionArticle = $request->DescriptionArticle;
+        $article->PublicationDate = $request->PublicationDate;
+        $article->statut = $request->has('statut');
+        $article->update();
+
+        return redirect('/liste')->with('status', 'article modifié avec succès.');
+    }
+
     
 }
