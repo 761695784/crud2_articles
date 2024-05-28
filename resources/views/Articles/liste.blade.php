@@ -30,7 +30,7 @@
                             @if($article->statut)
                             <span class="badge bg-success">À la une</span><hr>
                         @endif        
-                        <a href="{{ route('details', $article->id) }}" class="btn btn-info">Voir plus</a>                           
+                        {{-- <a href="{{ route('details', $article->id) }}" class="btn btn-info">Voir plus</a>                            --}}
                             <hr>
                             <a href="modifier_article/{{$article->id}}" class="btn btn-warning">Modifier</a>
                             <a href="supprimer_article/{{$article->id}}" class="btn btn-danger">Supprimer</a>
