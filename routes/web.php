@@ -11,3 +11,4 @@ Route::get('/liste', [ ArticlesController:: class,'liste' ]);
 Route::get('/ajouter', function () {
     return view('Articles.ajouter');});
 Route::POST('/ajouter/traitement', [ArticlesController::class, 'ajouter_Articles_traitement']);
+Route::get('/modifier_article/{id}', [ArticlesController::class, 'modifier_article']);

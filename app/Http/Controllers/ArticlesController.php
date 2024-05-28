@@ -38,7 +38,10 @@ class ArticlesController extends Controller
         return redirect('/ajouter')->with('status', 'article ajouté avec succès.');
     }
 
-
+    public function modifier_Article($id){
+        $articles = Article::find($id);
+        return view('Articles.modifier_article', compact('articles'));
+    }
 
 
     
