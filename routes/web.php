@@ -8,3 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('/liste', [ ArticlesController:: class,'liste' ]);
+Route::get('/ajouter', function () {
+    return view('Articles.ajouter');});

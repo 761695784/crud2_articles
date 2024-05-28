@@ -12,5 +12,9 @@ class ArticlesController extends Controller
     
          return view('Articles.liste', compact('articles'));
      }
+
+     public function ajouter(){
+        return view('Articles.ajouter');
+     }
     
 }
