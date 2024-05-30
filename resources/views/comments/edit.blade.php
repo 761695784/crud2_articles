@@ -23,16 +23,6 @@
     @endforeach
   </ul>
 
-
-
-
-
-
-
-
-
-
-
 <form method="post" action="/update/comment/{{$comment->id}}">
     @csrf
     

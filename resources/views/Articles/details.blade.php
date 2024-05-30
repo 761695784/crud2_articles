@@ -7,6 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    @if (session('status'))
+    <div class="alert alert-success">
+        {{session('status')}}
+    </div>   
+@endif  
+
 
 <div class="container mt-5">
     <a href="/liste" class="btn btn-danger ">Retour à la liste</a>
@@ -26,10 +32,8 @@
                 <p>{{ $comment->contenu }}</p>
                 <p class="badge text-bg-warning" ><strong>Publié le:</strong> {{ $comment->date_heure_creation }}</p><br>
               
-                <a href="{{route('comments.edit',$comment->id)}}" class="btn btn-primary">Modifier</a> 
-                
-                <a href="{{route('comments.destroy',$comment->id)}}" class="btn btn-danger">Supprimer</a> 
-           
+                <a href="{{route('comments.edit',$comment->id)}}" class="btn btn-primary">Modifier</a>                
+                <a href="{{route('comments.destroy',$comment->id)}}" class="btn btn-danger">Supprimer</a>           
             </div>
         </div>
     @endforeach

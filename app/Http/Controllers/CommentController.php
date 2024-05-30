@@ -8,22 +8,22 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-        public function formulComment(Request $request){
-        $request->validate([
-            'nom_complet_auteur' =>'required',
-            'contenu' =>'required',
-            'date_heure_creation' =>'required|date',
-            'article_id' =>'required',
-        ]);
-        $comment = new Comment();
-        $comment->nom_complet_auteur = $request->nom_complet_auteur;
-        $comment->contenu = $request->contenu;
-        $comment->date_heure_creation = now();
-        $comment->article_id = $request->article_id;
-        $comment->save();
-        return redirect('/formComm')->with('status', 'commentaire ajouté avec succès.');
+    //     public function formulComment(Request $request){
+    //     $request->validate([
+    //         'nom_complet_auteur' =>'required',
+    //         'contenu' =>'required',
+    //         'date_heure_creation' =>'required|date',
+    //         'article_id' =>'required',
+    //     ]);
+    //     $comment = new Comment();
+    //     $comment->nom_complet_auteur = $request->nom_complet_auteur;
+    //     $comment->contenu = $request->contenu;
+    //     $comment->date_heure_creation = now();
+    //     $comment->article_id = $request->article_id;
+    //     $comment->save();
+    //     return redirect('/formComm')->with('status', 'commentaire ajouté avec succès.');
         
-    }
+    // }
 
     public function store(Request $request)
     {
@@ -41,7 +41,7 @@ class CommentController extends Controller
                 'article_id' => $validatedData['article_id'],
             ]);
 
-            return redirect()->route('details', ['id' => $validatedData['article_id']])
+            return redirect()->back()
                              ->with('status', 'Commentaire ajouté avec succès.');
         } catch (\Exception $e) {
             return redirect()->back()
@@ -63,7 +63,9 @@ class CommentController extends Controller
             'contenu' => $request->contenu,
         ]);
 
-        echo 'status', 'Commentaire modifié avec succès.';
+      
+        return redirect()->back()
+        ->with('status', 'Commentaire modifié avec succès.');
     }
 
 
