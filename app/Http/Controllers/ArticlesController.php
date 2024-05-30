@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ArticlesController extends Controller
 {
     public function liste(){
         $articles = Article::all();
-    
+        // {{ Str::limit($article->DescriptionArticle, 150) }}
          return view('Articles.liste', compact('articles'));
      }
 
@@ -64,5 +65,19 @@ class ArticlesController extends Controller
         return redirect('/liste')->with('status', 'article modifié avec succès.');
     }
 
+    public function supprimer_Article($id){
+        $articles = Article::find($id);
+        $articles->delete();
+        return redirect('/liste')->with('status', 'article supprimé avec succès.');     
+    }
+
+    public function details($id)
+    {
+        $articles = Article::findOrFail($id);
+        return view('Articles.details', compact('articles'));
+    }
     
+   
+ 
+
 }

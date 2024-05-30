@@ -25,12 +25,13 @@
                         <img src="{{asset ($article->ImageArticle)}}" class="card-img-top" alt="article one">
                         <div class="card-body">
                             <h5 class="card-title">{{$article->TitreArticle}}</h5>
-                            <p class="card-text">{{$article->DescriptionArticle}} </p> 
+                            <p class="card-text">{{ substr($article->DescriptionArticle, 0,250) }}</p>
+
                             <p class="card-text" style="color: green"><u><strong>Publié le</strong></u> : {{$article->PublicationDate}} </p>
                             @if($article->statut)
                             <span class="badge bg-success">À la une</span><hr>
                         @endif        
-                        {{-- <a href="{{ route('details', $article->id) }}" class="btn btn-info">Voir plus</a>                            --}}
+                        <a href="{{ route('details', $article->id) }}" class="btn btn-info">Voir plus</a>                           
                             <hr>
                             <a href="modifier_article/{{$article->id}}" class="btn btn-warning">Modifier</a>
                             <a href="supprimer_article/{{$article->id}}" class="btn btn-danger">Supprimer</a>

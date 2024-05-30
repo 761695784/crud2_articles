@@ -14,4 +14,26 @@ class Article extends Model
         'PublicationDate',
         'statut',
     ];
+
+
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
