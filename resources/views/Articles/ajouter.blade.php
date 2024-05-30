@@ -35,10 +35,12 @@
             <label for="TitreArticle" class="form-label">Titre de l'article</label>
             <input type="text" class="form-control" name="TitreArticle" placeholder="Entrez le titre de l'article">
           </div>
+         
           <div class="mb-3">
             <label for="DescriptionArticle" class="form-label">Description de l'article</label>
-            <textarea class="form-control"  name="DescriptionArticle" rows="3" placeholder="Entrez la description de l'article"></textarea>
+            <textarea class="form-control"  name="DescriptionArticle" rows="3" placeholder="Entrez la description de l'article" value="{{old('DescriptionArticle')}}"></textarea>
           </div>
+         
 
           <div class="mb-3">
             <label for="PublicationDate" class="form-label">Publié le</label>
