@@ -16,7 +16,7 @@ class Article extends Model
     ];
 
 
-
+  //Permet de recuperer toutes les commentaires liés a un articles 
     public function comments()
     {
         return $this->hasMany(Comment::class);

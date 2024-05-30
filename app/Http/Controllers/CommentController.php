@@ -8,22 +8,6 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-    //     public function formulComment(Request $request){
-    //     $request->validate([
-    //         'nom_complet_auteur' =>'required',
-    //         'contenu' =>'required',
-    //         'date_heure_creation' =>'required|date',
-    //         'article_id' =>'required',
-    //     ]);
-    //     $comment = new Comment();
-    //     $comment->nom_complet_auteur = $request->nom_complet_auteur;
-    //     $comment->contenu = $request->contenu;
-    //     $comment->date_heure_creation = now();
-    //     $comment->article_id = $request->article_id;
-    //     $comment->save();
-    //     return redirect('/formComm')->with('status', 'commentaire ajouté avec succès.');
-        
-    // }
 
     public function store(Request $request)
     {
