@@ -10,7 +10,6 @@ class ArticlesController extends Controller
 {
     public function liste(){
         $articles = Article::all();
-        // {{ Str::limit($article->DescriptionArticle, 150) }}
          return view('Articles.liste', compact('articles'));
      }
 
